@@ -1,0 +1,96 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+/* .App{
+} */
+body {
+    background-color: #040004;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#divStats, #divComida {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#divStats {
+    background-color: #040004;
+    margin-bottom: 20px;
+}
+#divComida{
+    background-color: #413d3d;
+}
+.comida {
+    margin: 5px 10px
+}
+.stats {
+    display: flex;
+    width: 150px;
+    justify-content: space-evenly;
+    margin: 3px 3px;
+}
+label {
+    color: white;
+}
+input {
+    width: 70px;
+    margin: 0px 5px;
+    border-radius: 15px;
+    padding: 0px 5px;
+    background-color: black;
+    color: white;
+}
+#botao{
+    width: 150px;
+    border-radius: 30px;
+    color: white;
+    background-color: black;
+    border-color: grey;
+    margin-top: 15px;
+}
+.navitem {
+    display: flex;
+    border: 1px solid white;
+    background-color:#4b000f;
+}
+#imgComida {
+    width: 100px;
+    height: 100px;
+}
+#statsComida {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+#h2Comida {
+    display: inline;
+    font-size: larger;
+}
+.textComida {
+    text-align: center;
+    color: white;
+    margin: 2px;
+}
+#container {
+    display: flex;
+}
+#header {
+    padding: 2.5px 0px;
+    background-color: #fa023c;
+    width: "100%";
+    height: 50;
+    display: flex;
+    justify-content: space-between;
+}
+#header img {
+    width: 50px;
+    height: 50px;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+#nav {
+    background-color: #c8ff00;
+}

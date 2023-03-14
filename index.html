@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/stylesheet.css">
+</head>
+<body>
+    <div id='header'>
+        <img id="leftIcon" src='https://cdn-icons-png.flaticon.com/512/857/857681.png' alt='noImg'/>
+        <img id="rightIcon" src='https://static.vecteezy.com/system/resources/previews/014/455/855/non_2x/illustration-of-food-bell-icon-on-transparent-background-free-png.png' alt='noImg'/>
+    </div>
+    <div id='container'>
+        <div id='nav'>
+            <!-- {Object.keys(comida).map(item => {
+                return <NavItem obj={comida[item]}  key={comida[item].nome} valueDisplay={displayComida} />
+            })} -->
+        </div>
+        <div id='content'>
+            <div id='divStats'>
+                <!-- {['Peso', 'Bf', 'Idade', 'Altura', 'Superavit', 'Deficit', 'Supino', 'Agacho', 'Terra', 'Stiff', 'Restante', 'Velocidade', 'Minuto', 'Adicional'].map(item => {
+                    return <Item key={item} name={item} clName='stats' action={(text) => toStats(text, item.toLowerCase())} value={preSet[item.toLowerCase()]} />
+                })} -->
+            </div>
+            <div id='divComida' >
+                <!-- {data.map(item => {
+                return <Item key={item.nome} name={item.nome} clName={'comida'} action={(text) => toComida(text, item)} />
+                })} -->
+            </div>
+        </div>
+        <div id="res" style="display: displayRes; flex-direction: column; margin: 10; width: 800;">
+            <!-- {Object.keys(macros).map(item => {
+                return <p style={{color: "white", fontSize: 20}}>{item}: {macros[item].toFixed(2)}</p>
+            })} -->
+            <div id="sugest" style="background-color: red;">
+                <!-- {Object.keys(sugestComida).map(item => {
+                    return (
+                        <div style={{backgroundColor: "black", color: "white", display: "flex"}}>
+                            <div>
+                                <p style={{color: "white", backgroundColor: "red"}}>{item}</p>
+                                {Object.keys(sugestComida[item]).map(item2 => {
+                                    return (typeof(sugestComida[item][item2].grama) !== 'undefined') ? <NavItem obj={sugestComida[item][item2]} valueDisplay={"flex"}/> : <p style={{color: "white"}}>{sugestComida[item][item2]}g de {item}</p>
+                                })}
+                            </div>
+                        </div>
+                )})}   -->
+          </div>
+        </div>
+    </div>
+    <script type="module" src="./js/script.js"></script>
+</body>
+</html>
