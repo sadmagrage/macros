@@ -14,6 +14,13 @@
     </div>
     <div id='container'>
         <div id='nav'>
+            <div style="display: none" class="navitem">
+                <img src="https://cf.shopee.com.br/file/cbf20b122e2574ab47a61d37b05e50ba" id="imgComida" alt="noImg"/>
+                <div id="statsComida">
+                    <h2 class="textComida" id="h2Comida" style="color: white">dasdsa</h2>
+                    <p class="textComida" id="textComida">{obj.grama}g</p>
+                </div>
+            </div>
             <!-- {Object.keys(comida).map(item => {
                 return <NavItem obj={comida[item]}  key={comida[item].nome} valueDisplay={displayComida} />
             })} -->
@@ -30,22 +37,21 @@
                 })} -->
             </div>
         </div>
-        <div id="res" style="display: displayRes; flex-direction: column; margin: 10; width: 800;">
-            <!-- {Object.keys(macros).map(item => {
-                return <p style={{color: "white", fontSize: 20}}>{item}: {macros[item].toFixed(2)}</p>
-            })} -->
+        <div id="res" style="background-color: black">
+            <p style="color: white">dsaç,dklasdiop</p>
             <div id="sugest" style="background-color: red;">
-                <!-- {Object.keys(sugestComida).map(item => {
-                    return (
-                        <div style={{backgroundColor: "black", color: "white", display: "flex"}}>
+                        <div style="background-color: black; color: white; display: flex">
                             <div>
-                                <p style={{color: "white", backgroundColor: "red"}}>{item}</p>
-                                {Object.keys(sugestComida[item]).map(item2 => {
-                                    return (typeof(sugestComida[item][item2].grama) !== 'undefined') ? <NavItem obj={sugestComida[item][item2]} valueDisplay={"flex"}/> : <p style={{color: "white"}}>{sugestComida[item][item2]}g de {item}</p>
-                                })}
+                                <p style="color: white; background-color: red;">{item}</p>
+                                <div class="navitem" style="display: flex">
+                                    <img src="https://cf.shopee.com.br/file/cbf20b122e2574ab47a61d37b05e50ba" id="imgComida" alt="noImg"/>
+                                    <div id="statsComida">
+                                        <h2 class="textComida" id="h2Comida" style="color: white">{obj.nome}</h2>
+                                        <p class="textComida" id="textComida">{obj.grama}g</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                )})}   -->
           </div>
         </div>
     </div>

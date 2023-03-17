@@ -14,15 +14,24 @@ const LEFT_ICON = document.querySelector("#leftIcon");
 const RIGHT_ICON = document.querySelector("#rightIcon");
 
 LEFT_ICON.addEventListener("click", () => {
-    // (displayComida === 'none') ? setDisplayComida('flex') : setDisplayComida('none');
-    // LEFT_ICON.style.displa = "blue";
-    console.log(getComputedStyle(HEADER).display);
+    NAV.innerHTML = 'sdjiiasj';
+    getComputedStyle(NAV).display != 'flex' ? NAV.style.display = 'flex' : NAV.style.display = 'none';
 });
 
 RIGHT_ICON.addEventListener("click", () => {
-    // (displayRes === 'none') ? setDisplayRes('flex') : setDisplayRes('none');
+    RES.innerHTML = 'sdjiiasj';
+    console.log(getComputedStyle(RES).display);
+    getComputedStyle(RES).display != 'flex' ? RES.style.display = 'flex' : RES.style.display = 'none';  
 });
 
-NAV.innerHTML = () => {
-    return "aa";
-}
+DIV_STATS.style.backgroundColor = "purple";
+
+DIV_STATS.innerHTML += ['Peso', 'Bf', 'Idade', 'Altura', 'Superavit', 'Deficit', 'Supino', 'Agacho', 'Terra', 'Stiff', 'Restante', 'Velocidade', 'Minuto', 'Adicional'].map(item => {
+    return (
+    <div class="stats">
+        <label>${item}</label>
+        <input id placeholder={typeof() === 'undefined'? "" : value } />
+    </div>
+    );
+    // return <Item key={item} name={item} clName='stats' action={(text) => toStats(text, item.toLowerCase())} value={preSet[item.toLowerCase()]} />
+});
