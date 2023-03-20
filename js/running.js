@@ -1,5 +1,4 @@
 import { macros, statsPessoa, sugest, statsComida } from "./state.js";
-import { fetchData } from "./fetchData.js";
 
 export const running = () => {
     let peso, bf, idade, altura, supino, agacho, terra, stiff, restante, velocidade, minutos, superavit, deficit, adicional, stats, comida;

@@ -1,38 +1,73 @@
-import { macros, sugest } from "./state.js";
-import { data } from "./returnComida.js";
+import { macros, sugest, sugestComida } from "./state.js";
+import { passingSugestComida } from "./passingSugestComida.js";
 
 let resMacro = "";
-let resSugest = "";
 
 Object.keys(macros).map(item => {
-    resMacro += `<div style="display:flex; color: white; font-size: 25px"><p style="width: 80px">${item}:</p><p id='res${item}'>0</p></div>`;
+    resMacro += `<div id="objKeysMacros"><p style="padding-right: 5px;">${item}:</p><p id='res${item}'>0</p></div>`;
 });
 
-data.map(item => {
-    if (item.proth > 0) {
-        //SO FALTA TERMINA O RES E COLOCA PLACEHOLER C VALOR PRESETADO COM EVAL E JA ERA ACHO
-    }
-    else {
+const updateResSugest = () => {
+    Object.keys(sugest).map(item => {
+        const currentMacro = item.slice(5).toLowerCase();
+        if (sugest[item] > 0) {
+            if (currentMacro == 'carb' || currentMacro == 'proth' || currentMacro == 'fat') {
+                sugestComida[currentMacro] = [];
+    
+                if (item == 'faltaCarb' || item == 'faltaFat') {
+                    passingSugestComida(currentMacro, 0.2, 1);
+                }
+                else {
+                    passingSugestComida(currentMacro, "", "");
+                }
+            }
+            else {
+                sugestComida[currentMacro] = `Falta ${parseFloat(sugest[item]).toFixed(2)}g de ${currentMacro}`;
+            }
+        }
+        else {
+            sugestComida[currentMacro] = `Passou ${-parseFloat(sugest[item]).toFixed(2)}g ${item.slice(5)}`;
+        }
+    });
+    
+    let resSugestComida = "";
 
-    }
-});
-
-let adding = `
-    <div style="background-color: black; color: white; display: flex">
-        <div>
-            <p style="color: white; background-color: red;">{item}</p>
-            <div class="navitem" style="display: flex">
-                <img src="https://cf.shopee.com.br/file/cbf20b122e2574ab47a61d37b05e50ba" id="imgComida" alt="noImg"/>
-                <div id="statsComida">
-                    <h2 class="textComida" id="h2Comida" style="color: white">{obj.nome}</h2>
-                    <p class="textComida" id="textComida">{obj.grama}g</p>
+    Object.keys(sugestComida).map(item => {
+        if (typeof(sugestComida[item]) == "string") {
+            resSugestComida += `
+            <div class="resSugestComida">
+                <div>
+                    <p class="macro">${item.charAt(0).toUpperCase() + item.slice(1)}</p>
+                    <p class="noSugest">${sugestComida[item]}</p>
                 </div>
             </div>
-        </div>
-    </div>`;
+            `;
+        }
+        else {
+            resSugestComida += `
+            <div class="resSugestComida">
+                <div>
+                    <p class="macro">${item.charAt(0).toUpperCase() + item.slice(1)}</p>
+                    <p class="noSugest">${parseFloat(sugest["falta" + item.charAt(0).toUpperCase() + item.slice(1)]).toFixed(2)}g de ${item.charAt(0).toUpperCase() + item.slice(1)}</p>`
+            Object.keys(sugestComida[item]).map(item2 => {
+                resSugestComida += `
+                    <div class="navitem">
+                        <img src="${sugestComida[item][item2].img}" id="imgComida" alt="noImg"/>
+                        <div id="statsComida">
+                            <h2 class="textComida" id="h2Comida">${sugestComida[item][item2].nome}</h2>
+                            <p class="textComida" id="textComida">${sugestComida[item][item2].grama}</p>
+                        </div>
+                    </div>
+                `;
+            });
+            resSugestComida += `</div></div>`;
+        }
+    });
+    return resSugestComida;
+};
 
 let res = `
 <div id="resMacros">${resMacro}</div>
-<div id="sugest" style="background-color: red;">${resSugest}</div>`;
+<div id="sugest"></div>`;
 
-export { res };
+export { res, updateResSugest };

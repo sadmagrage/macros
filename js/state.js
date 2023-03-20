@@ -12,4 +12,6 @@ const sugest = {};
 
 const statsComida = {};
 
-export { macros , statsPessoa, sugest, statsComida };
+const sugestComida = {};
+
+export { macros , statsPessoa, sugest, statsComida, sugestComida };

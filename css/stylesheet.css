@@ -2,8 +2,6 @@
     padding: 0;
     margin: 0;
 }
-/* .App{
-} */
 body {
     background-color: #040004;
     display: flex;
@@ -11,8 +9,7 @@ body {
     justify-content: center;
 }
 #res {
-    /* display: none;  */
-    background-color: red;
+    background-color: black;
     flex-direction: column; 
     margin: 10; 
     width: 800;
@@ -22,12 +19,33 @@ body {
     justify-content: center;
     flex-wrap: wrap;
 }
+.resSugestComida {
+    background-color: black; 
+    color: white; 
+    display: flex;
+}
+.macro {
+    color: white; 
+    background-color: red;
+}
+.sugest {
+    background-color: red;
+}
+.noSugest {
+    color: white;
+}
 #divStats {
     background-color: #040004;
     margin-bottom: 20px;
 }
 #divComida{
     background-color: #413d3d;
+}
+#objKeysMacros {
+    display: flex; 
+    color: white; 
+    font-size: 20px;
+    padding-left: 5px;
 }
 .comida {
     margin: 5px 10px
@@ -74,6 +92,7 @@ input {
 }
 #h2Comida {
     display: inline;
+    color: white;
     font-size: larger;
 }
 .textComida {
@@ -101,4 +120,13 @@ input {
 }
 #nav {
     background-color: #c8ff00;
+    display: none;
+}
+#res {
+    display: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }

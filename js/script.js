@@ -1,15 +1,15 @@
-import { macros, statsPessoa, sugest, statsComida } from "./state.js";
+import { macros, statsPessoa, statsComida } from "./state.js";
 import { navItem } from "./returnNavItem.js";
 import { running } from "./running.js";
 import { returnStats } from "./returnStats.js";
 import { comida, data_obj } from "./returnComida.js";
-import { res } from "./returnRes.js";
+import { res, updateResSugest } from "./returnRes.js";
+import { passingByWeek } from "./passingByWeek.js";
 
 const NAV = document.querySelector("#nav");
 const DIV_STATS = document.querySelector("#divStats");
 const DIV_COMIDA = document.querySelector("#divComida");
 const RES = document.querySelector("#res");
-const SUGEST = document.querySelector("#sugest");
 
 const LEFT_ICON = document.querySelector("#leftIcon");
 const RIGHT_ICON = document.querySelector("#rightIcon");
@@ -26,9 +26,11 @@ DIV_STATS.innerHTML = returnStats();
 DIV_COMIDA.innerHTML = comida;
 RES.innerHTML = res;
 
+const SUGEST = document.querySelector("#sugest");
+
 const update = () => {
     Object.keys(macros).map(item => {
-        document.querySelector(`#res${item}`).innerHTML = macros[item];
+        document.querySelector(`#res${item}`).innerHTML = parseFloat(macros[item]).toFixed(2);
     });
 
     let nav_items = "";
@@ -38,7 +40,10 @@ const update = () => {
     });
 
     NAV.innerHTML = nav_items;
+    SUGEST.innerHTML = updateResSugest();
 };
+
+passingByWeek();
 
 const inputPessoa = document.querySelectorAll('.inputStats');
 const comidas = document.querySelectorAll('.inputComida');
@@ -70,3 +75,5 @@ for(let i = 0; i < comidas.length; i++){
         update();
     });
 }
+
+export { update }
