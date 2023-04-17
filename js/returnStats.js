@@ -5,7 +5,7 @@ const returnStats = () => {
         stats += `
         <div class="stats">
             <label>${item}</label>
-            <input class='inputStats' type='number' id='${item.toLowerCase()}' />
+            <input class='inputStats' id='${item.toLowerCase()}' />
         </div>`;
     });
 

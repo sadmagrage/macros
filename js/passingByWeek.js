@@ -4,7 +4,7 @@ import { statsPessoa } from "./state.js";
 
 const passingByWeek = () => {
     const dia = new Date().getDay();
-    const alreadySet = [{label: 'peso', value: '95'}, {label: 'bf', value: '0.2'}, {label: 'idade', value: '19'}, {label: 'altura', value: '172'}, {label: 'deficit', value: '734'}];
+    const alreadySet = [{label: 'peso', value: '95'}, {label: 'bf', value: '0.2'}, {label: 'idade', value: '19'}, {label: 'altura', value: '172'}, {label: 'superavit', value: '0.15'}];
 
     switch (dia) {
         case 1:
@@ -24,7 +24,7 @@ const passingByWeek = () => {
             break;
     
         default:
-            alreadySet.push({label: 'velocidade', value: '5'}, {label: 'minuto', value: '120'});
+            alreadySet.push({label: 'velocidade', value: '5'}, {label: 'minuto', value: '90'});
             break;
     }
 

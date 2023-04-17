@@ -15,7 +15,7 @@ const LEFT_ICON = document.querySelector("#leftIcon");
 const RIGHT_ICON = document.querySelector("#rightIcon");
 
 LEFT_ICON.addEventListener("click", () => {
-    getComputedStyle(NAV).display == 'block' ? NAV.style.display = 'none' : NAV.style.display = 'block';
+    getComputedStyle(NAV).display == 'none' ? NAV.style.display = 'flex' : NAV.style.display = 'none';
 });
 
 RIGHT_ICON.addEventListener("click", () => {
@@ -33,13 +33,13 @@ const update = () => {
         document.querySelector(`#res${item}`).innerHTML = parseFloat(macros[item]).toFixed(2);
     });
 
-    let nav_items = "";
+    let nav_items = "<div class=\"scrollSugest\">";
 
     Object.keys(statsComida).map(item => {
         nav_items += navItem(statsComida[item].img, statsComida[item].nome, statsComida[item].grama);
     });
 
-    NAV.innerHTML = nav_items;
+    NAV.innerHTML = nav_items + "</div>";
     SUGEST.innerHTML = updateResSugest();
 };
 
@@ -50,8 +50,8 @@ const comidas = document.querySelectorAll('.inputComida');
 
 for(let i = 0; i < inputPessoa.length; i++){
     inputPessoa[i].addEventListener('input', (e) => {
-        statsPessoa[e.target.id] = e.target.value;
-        if (statsPessoa[e.target.id] == "") {
+        statsPessoa[e.target.id] = eval(e.target.value);
+        if (statsPessoa[e.target.id] == undefined) {
             delete statsPessoa[e.target.id];
         }
         running();
@@ -65,10 +65,10 @@ for(let i = 0; i < comidas.length; i++){
         Object.keys(data_obj[e.target.id]).map(item => {
             passsingToStatsComida[item] = data_obj[e.target.id][item];
         });
-        passsingToStatsComida['grama'] = e.target.value;
+        passsingToStatsComida['grama'] = eval(e.target.value);
 
         statsComida[e.target.id] = passsingToStatsComida;
-        if (statsComida[e.target.id]['grama'] == "") {
+        if (statsComida[e.target.id]['grama'] == undefined) {
             delete statsComida[e.target.id];
         }
         running();

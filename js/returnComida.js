@@ -11,7 +11,7 @@ data.map(item => {
     comida += `
     <div class='comida'>
         <label>${item.nome}</label>
-        <input class='inputComida' type='number' id='${item.nome}' />
+        <input class='inputComida' id='${item.nome}' />
     </div>
     `;
 });

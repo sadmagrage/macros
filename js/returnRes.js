@@ -36,7 +36,7 @@ const updateResSugest = () => {
         if (typeof(sugestComida[item]) == "string") {
             resSugestComida += `
             <div class="resSugestComida">
-                <div>
+                <div">
                     <p class="macro">${item.charAt(0).toUpperCase() + item.slice(1)}</p>
                     <p class="noSugest">${sugestComida[item]}</p>
                 </div>
@@ -47,8 +47,9 @@ const updateResSugest = () => {
             resSugestComida += `
             <div class="resSugestComida">
                 <div>
-                    <p class="macro">${item.charAt(0).toUpperCase() + item.slice(1)}</p>
-                    <p class="noSugest">${parseFloat(sugest["falta" + item.charAt(0).toUpperCase() + item.slice(1)]).toFixed(2)}g de ${item.charAt(0).toUpperCase() + item.slice(1)}</p>`
+                    <p id="${item}" class="macro">${item.charAt(0).toUpperCase() + item.slice(1)}</p>
+                    <p class="noSugest">${parseFloat(sugest["falta" + item.charAt(0).toUpperCase() + item.slice(1)]).toFixed(2)}g de ${item.charAt(0).toUpperCase() + item.slice(1)}</p>
+                    <div class="scrollSugest">`
             Object.keys(sugestComida[item]).map(item2 => {
                 resSugestComida += `
                     <div class="navitem">
@@ -60,7 +61,7 @@ const updateResSugest = () => {
                     </div>
                 `;
             });
-            resSugestComida += `</div></div>`;
+            resSugestComida += `</div></div></div>`;
         }
     });
     return resSugestComida;

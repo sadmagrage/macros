@@ -119,14 +119,18 @@ input {
     cursor: pointer;
 }
 #nav {
-    background-color: #c8ff00;
     display: none;
 }
 #res {
     display: none;
+    margin-bottom: 35px;
 }
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+.scrollSugest {
+    height: 350px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#nav .scrollSugest {
+    background-color: #c8ff00;
+    height: 500px;
 }
