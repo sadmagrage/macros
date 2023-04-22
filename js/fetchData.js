@@ -1,5 +1,5 @@
 export const fetchData = async () => {
-    const url = 'https://tryingrailway-production.up.railway.app/db';
+    const url = './json/data.json';//https://tryingrailway-production.up.railway.app/db';
     const data = await fetch(url)
         .then(res => res.json())
         .then(data => data)
