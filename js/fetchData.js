@@ -1,5 +1,5 @@
 export const fetchData = async () => {
-    const url = 'https://tryingrailway-production.up.railway.app/db';
+    const url = 'https://humorous-angry-detail.glitch.me/comida';
     const data = await fetch(url)
         .then(res => res.json())
         .then(data => data)
